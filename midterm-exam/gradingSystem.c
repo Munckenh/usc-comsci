@@ -22,9 +22,9 @@
 
 #include <stdio.h>
 
-/*
- * Instructions
- * ============
+/* Instructions */
+
+/* 
  * Its the end of the semester and to help the admin see who has garnered passing
  * remarks this semester, they have decided to get a system built to check who
  * has passed or failed this semester. The system will ask how many subjects the
@@ -44,14 +44,18 @@
  * 
  * In the event the student has a grade of 0 in all of his exam, then the student
  * will not have a best subject and will instead display "No Best Subject"
- * 
- * Sample Output 1
- * ===============
+ */
+
+/* Sample Output 1 */
+
+/*
  * Input number of Subjects: 0
  * Input number of Exams: 0
- * 
- * Sample Output 2
- * ===============
+ */
+
+/* Sample Output 2 */
+
+/*
  * Input number of Subjects: 1
  * Input number of Exams: 1
  * Input Grade for Subject 1 - Exam 1 : 0
@@ -63,9 +67,11 @@
  * Worst Subject: Subject 1
  * 
  * Failed this Semester
- * 
- * Sample Output 3
- * ===============
+ */
+
+/* Sample Output 3 /*
+
+/*
  * Input number of Subjects: 2
  * Input number of Exams: 2
  * Input Grade for Subject 1 - Exam 1 : 90

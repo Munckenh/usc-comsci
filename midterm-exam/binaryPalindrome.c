@@ -27,9 +27,9 @@ int power(int base, int exponent);
 int decimalToBinary(int decimal);
 int isPalindrome(int number);
 
+/* Instructions */
+
 /*
- * Instructions
- * ============
  * As you entered the hall walking slowly. A loud voice saying "I am your god.
  * And I will only accept those who are deemed worthy. Show me what you have
  * got." As you continue to walk, in the wall shows the inscribed text that
@@ -47,21 +47,27 @@ int isPalindrome(int number);
  * 
  * Hint: Create a program that would accept a number. And checks if the binary
  * equivalent is a palindrome.
- * 
- * Sample Output 1
- * ===============
+ */
+
+/* Sample Output 1 */
+
+/*
  * Enter your number: 5
  * The value of your soul is 101.
  * You are worthy my child.
- * 
- * Sample Output 2
- * ===============
+ */
+
+/* Sample Output 2 */
+
+/*
  * Enter your number: 10
  * The value of your soul is 1010.
  * Ahh, you are filty. Be gone.
- * 
- * Sample Output 3
- * ===============
+ */
+
+/* Sample Output 3 /*
+
+/*
  * Enter your number: 45
  * The value of your soul is 101101.
  * You are worthy my child.
