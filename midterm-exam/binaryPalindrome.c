@@ -123,15 +123,15 @@ int decimalToBinary(int decimalNumber) {
 
 int isPalindrome(int number) {
     int digits = getDigits(number);
-    int paddedOriginalNumber = 1 + power(10, digits + 1) + number * 10;
-    int paddedReversedNumber = 1 + power(10, digits + 1);
+    int originalNumber = number;
+    int reversedNumber = 0;
 
     for (int i = digits; i > 0; --i) {
-        paddedReversedNumber += (number % 10) * power(10, i);
+        reversedNumber += number % 10 * power(10, i - 1);
         number /= 10;
     }
-    
-    if (paddedReversedNumber == paddedOriginalNumber) {
+
+    if (reversedNumber == originalNumber) {
         return 1;
     } else {
         return 0;
