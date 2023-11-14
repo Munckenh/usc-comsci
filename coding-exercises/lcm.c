@@ -1,21 +1,26 @@
 #include <stdio.h>
 
-int lcm(int x, int y);
+int lcm(int a, int b);
 
 int main() {
-    printf("%d", lcm(10, 15));
+    int a, b;
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    printf("The least common multiple is %d.", lcm(a, b));
     return 0;
 }
 
-int lcm(int x, int y) {
+int lcm(int a, int b) {
     int current;
-    if (x > y) {
-        current = x;
+    if (a > b) {
+        current = a;
     } else {
-        current = y;
+        current = b;
     }
     while (1) {
-        if (current % x == 0 && current % y == 0) {
+        if (current % a == 0 && current % b == 0) {
             return current;
         }
         ++current;
