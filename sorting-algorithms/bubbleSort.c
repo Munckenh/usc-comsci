@@ -12,9 +12,9 @@ int main() {
 }
 
 void swap(int* a, int* b) {
-    *a = *a + *b;
-    *b = *a - *b;
-    *a = *a - *b;
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 void bubble_sort(int* array, int size) {
