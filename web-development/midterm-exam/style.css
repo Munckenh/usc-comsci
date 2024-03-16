@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.padding-left {
+    padding: 0px 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 5px;
+}
+
+.row {
+    display: flex;
+    flex: 100%;
+}
+
+nav {
+    background-color: #606b72;
+    padding: 25px 0px;
+    text-align: center;
+}
+
+.bold-black {
+    font-size: larger;
+    font-weight: bold;
+    color: #262626;
+}
+
+footer {
+    background-color: #606b72;
+    padding: 10px 10px;
+    margin-top: auto;
+}
+
+.column {
+    flex: 50%;
+}
+
+.products {
+    background-color: #d9cebf;
+    padding: 25px 0px;
+}
+
+.items {
+    background-color: #f2f0ed;
+    padding: 25px 0px;
+}

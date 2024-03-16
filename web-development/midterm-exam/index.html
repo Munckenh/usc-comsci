@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="bold-black">Web Development POS</div>
+    </nav>
+    <div class="row">
+        <div class="column products">
+            <div class="padding-left">
+                <div class="bold-black">Products</div>
+                <ol id="product-list"></ol>
+            </div>
+        </div>
+        <div class="column items">
+            <div class="padding-left">
+                <div class="bold-black">Items</div>
+                <ol id="item-list"></ol>
+                <div class="margin-bottom">Sum: <input id="sum" value="0" disabled></div>
+                <div class="margin-bottom">Cash: <input id="cash" value="0"></div>
+                <button onclick="tender()">Tender</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="bold-black">© DCISM 2024</div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
