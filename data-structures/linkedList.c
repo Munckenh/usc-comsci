@@ -1,62 +1,79 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
+struct node {
     int data;
     struct node* next;
-} Node;
+};
 
-void display(Node* head);
-void insert_at_beginning(Node* head, int data);
-void insert_at_index(Node* head, int data, int index);
-void insert_at_end(Node* head, int data);
+void display(struct node* head);
+void insert_at_beginning(struct node* head, int data);
+void insert_at_index(struct node* head, int data, int index);
+void insert_at_end(struct node* head, int data);
+void delete_by_index(struct node* head, int index);
+void delete_by_data(struct node* head, int index);
 
 int main() {
-    Node* head = (Node*)malloc(sizeof(Node));
+    struct node* head = (struct node*)malloc(sizeof(struct node));
     head->next = NULL;
     insert_at_end(head, 20);
     insert_at_end(head, 40);
     insert_at_beginning(head, 10);
     insert_at_index(head, 30, 2);
+    delete_by_index(head, 2);
     display(head);
 }
 
-void display(Node* head) {
-    Node* current = head;
+void display(struct node* head) {
+    struct node* current = head;
     while (current->next != NULL) {
         printf("%d ", current->next->data);
         current = current->next;
     }
 }
 
-void insert_at_beginning(Node* head, int data) {
-    Node* node = (Node*)malloc(sizeof(Node));
+void insert_at_beginning(struct node* head, int data) {
+    struct node* node = (struct node*)malloc(sizeof(struct node));
     node->data = data;
     node->next = head->next;
     head->next = node;
 }
 
-void insert_at_index(Node* head, int data, int index) {
-    Node* current = head;
+void insert_at_index(struct node* head, int data, int index) {
+    struct node* current = head;
     for (int i = 0; i < index; i++) {
         current = current->next;
         if (current->next == NULL) {
             break;
         }
     }
-    Node* node = (Node*)malloc(sizeof(Node));
+    struct node* node = (struct node*)malloc(sizeof(struct node));
     node->data = data;
     node->next = current->next;
     current->next = node;
 }
 
-void insert_at_end(Node* head, int data) {
-    Node* current = head;
+void insert_at_end(struct node* head, int data) {
+    struct node* current = head;
     while (current->next != NULL) {
         current = current->next;
     }
-    Node* node = (Node*)malloc(sizeof(Node));
+    struct node* node = (struct node*)malloc(sizeof(struct node));
     node->data = data;
     node->next = current->next;
     current->next = node;
+}
+
+void delete_by_index(struct node* head, int index) {
+    struct node* current = head;
+    index;
+    for (int i = 0; i < index; i++) {
+        current = current->next;
+        if (current->next == NULL) {
+            return;
+        }
+    }
+    struct node* temp = current->next;
+    current->next = current->next->next;
+    free(temp);
 }
