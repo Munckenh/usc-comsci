@@ -11,16 +11,15 @@ void insert_at_beginning(struct node* head, int data);
 void insert_at_index(struct node* head, int data, int index);
 void insert_at_end(struct node* head, int data);
 void delete_by_index(struct node* head, int index);
-void delete_by_data(struct node* head, int index);
+void delete_by_data(struct node* head, int data);
 
 int main() {
     struct node* head = (struct node*)malloc(sizeof(struct node));
     head->next = NULL;
+    insert_at_end(head, 10);
     insert_at_end(head, 20);
+    insert_at_end(head, 30);
     insert_at_end(head, 40);
-    insert_at_beginning(head, 10);
-    insert_at_index(head, 30, 2);
-    delete_by_index(head, 2);
     display(head);
 }
 
@@ -76,4 +75,17 @@ void delete_by_index(struct node* head, int index) {
     struct node* temp = current->next;
     current->next = current->next->next;
     free(temp);
+}
+
+void delete_by_data(struct node* head, int data) {
+    struct node* current = head;
+    while(current->next != NULL) {
+        if (current->next->data == data) {
+            struct node* temp = current->next;
+            current->next = current->next->next;
+            free(temp);
+            break;
+        }
+        current = current->next;
+    }
 }
