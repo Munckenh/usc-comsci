@@ -6,21 +6,22 @@ typedef struct node {
     struct node* next;
 } Node;
 
-void print(Node* head);
-void insert(Node* head, int data);
-void append(Node* head, int data);
+void display(Node* head);
+void insert_at_beginning(Node* head, int data);
+void insert_at_index(Node* head, int data, int index);
+void insert_at_end(Node* head, int data);
 
 int main() {
     Node* head = (Node*)malloc(sizeof(Node));
     head->next = NULL;
-    insert(head, 1);
-    insert(head, 2);
-    insert(head, 3);
-    append(head, 4);
-    print(head);
+    insert_at_end(head, 20);
+    insert_at_end(head, 40);
+    insert_at_beginning(head, 10);
+    insert_at_index(head, 30, 2);
+    display(head);
 }
 
-void print(Node* head) {
+void display(Node* head) {
     Node* current = head;
     while (current->next != NULL) {
         printf("%d ", current->next->data);
@@ -28,14 +29,28 @@ void print(Node* head) {
     }
 }
 
-void insert(Node* head, int data) {
+void insert_at_beginning(Node* head, int data) {
     Node* node = (Node*)malloc(sizeof(Node));
     node->data = data;
     node->next = head->next;
     head->next = node;
 }
 
-void append(Node* head, int data) {
+void insert_at_index(Node* head, int data, int index) {
+    Node* current = head;
+    for (int i = 0; i < index; i++) {
+        current = current->next;
+        if (current->next == NULL) {
+            break;
+        }
+    }
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->data = data;
+    node->next = current->next;
+    current->next = node;
+}
+
+void insert_at_end(Node* head, int data) {
     Node* current = head;
     while (current->next != NULL) {
         current = current->next;
