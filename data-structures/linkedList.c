@@ -12,6 +12,7 @@ void insert_at_index(struct node* head, int data, int index);
 void insert_at_end(struct node* head, int data);
 void delete_by_index(struct node* head, int index);
 void delete_by_data(struct node* head, int data);
+void insert_sorted(struct node* head, int data);
 
 int main() {
     struct node* head = (struct node*)malloc(sizeof(struct node));
@@ -79,7 +80,7 @@ void delete_by_index(struct node* head, int index) {
 
 void delete_by_data(struct node* head, int data) {
     struct node* current = head;
-    while(current->next != NULL) {
+    while (current->next != NULL) {
         if (current->next->data == data) {
             struct node* temp = current->next;
             current->next = current->next->next;
@@ -88,4 +89,18 @@ void delete_by_data(struct node* head, int data) {
         }
         current = current->next;
     }
+}
+
+void insert_sorted(struct node* head, int data) {
+    struct node* current = head;
+    while (current->next != NULL) {
+        if (current->next->data >= data) {
+            break;
+        }
+        current = current->next;
+    }
+    struct node* node = (struct node*)malloc(sizeof(struct node));
+    node->data = data;
+    node->next = current->next;
+    current->next = node;
 }
