@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
+struct node* initiate_list() {
+    struct node* head = (struct node*)malloc(sizeof(struct node));
+    head->next = NULL;
+    return head;
+}
+
 void display(struct node* head) {
     struct node* current = head;
     while (current->next != NULL) {

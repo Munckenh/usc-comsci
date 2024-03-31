@@ -6,6 +6,7 @@ struct node {
     struct node* next;
 };
 
+struct node* initiate_list();
 void display(struct node* head);
 void insert_at_beginning(struct node* head, int data);
 void insert_at_index(struct node* head, int data, int index);
