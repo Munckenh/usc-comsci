@@ -66,7 +66,6 @@ void insert_at_end(struct node* head, int data) {
 
 void delete_by_index(struct node* head, int index) {
     struct node* current = head;
-    index;
     for (int i = 0; i < index; i++) {
         current = current->next;
         if (current->next == NULL) {
