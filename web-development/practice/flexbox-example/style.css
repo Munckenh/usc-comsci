@@ -1,0 +1,41 @@
+body {
+    background-color: #f6f4f0;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    border: #000000 1.5px solid;
+    border-radius: 5px;
+    min-width: 15rem;
+    resize: horizontal;
+    overflow: hidden;
+    padding: 0.75rem;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.input {
+    flex: 1 0 10rem;
+    border: #000000 1.5px solid;
+    border-radius: 2.5px;
+    padding: 5px 10px;
+}
+
+.button {
+    flex: 1 0 5rem;
+    background-color: #c0b9a5;
+    border: #000000 1.5px solid;
+    border-radius: 2.5px;
+    padding: 7.5px;
+}
