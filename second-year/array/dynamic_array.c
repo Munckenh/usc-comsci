@@ -16,7 +16,7 @@ void initialize(array_t* a, int size) {
 }
 
 void resize(array_t* a, int size) {
-    realloc(a, size * sizeof(int));
+    a->array = (int*)realloc(a->array, size * sizeof(int));
     a->size *= 2;
 }
 
