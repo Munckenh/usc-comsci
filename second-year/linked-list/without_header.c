@@ -35,3 +35,17 @@ void delete_item(struct node** head_ref, int data) {
         free(node);
     }
 }
+
+void delete_all(struct node** head_ref, int data) {
+    struct node** current;
+    for (current = head_ref; *current != NULL;) {
+        if ((*current)->data == data) {
+            struct node* node = *current;
+            *current = (*current)->next;
+            free(node);
+        }
+        else {
+            current = &(*current)->next;
+        }
+    }
+}
