@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 void display_binary(unsigned int value) {
-    for (int i = 8 * sizeof(int) - 1; i >= 0; --i) {
-        printf("%d", (value >> i) & 1);
+    for (unsigned int mask = 1 << (8 * sizeof(unsigned int) - 1); mask > 0; mask = mask >> 1) {
+        printf("%d", (mask & value) ? 1 : 0);
     }
     printf("\n");
 }
